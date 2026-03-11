@@ -6,18 +6,15 @@ public class PalindromeCheckerApp {
 
         String word="madam";
 
-        Stack<Character> stack=new Stack<>();
-        Queue<Character> queue=new LinkedList<>();
+        Deque<Character> deque=new LinkedList<>();
 
-        for(char c:word.toCharArray()){
-            stack.push(c);
-            queue.add(c);
-        }
+        for(char c:word.toCharArray())
+            deque.add(c);
 
         boolean palindrome=true;
 
-        while(!stack.isEmpty()){
-            if(stack.pop()!=queue.remove()){
+        while(deque.size()>1){
+            if(deque.removeFirst()!=deque.removeLast()){
                 palindrome=false;
                 break;
             }
