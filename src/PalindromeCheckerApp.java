@@ -1,11 +1,19 @@
-package Main;
+class PalindromeService{
 
-public class PalindromeCheckerApp {
+    boolean check(String word){
+        String rev=new StringBuilder(word).reverse().toString();
+        return word.equals(rev);
+    }
+}
 
-    public static void main(String[] args) {
+public class PalindromeCheckerApp{
 
-        System.out.println("Welcome to Palindrome Checker Application");
+    public static void main(String[] args){
+
+        PalindromeService service=new PalindromeService();
+
+        System.out.println(service.check("madam")
+                ?"Palindrome":"Not Palindrome");
 
     }
-
 }
