@@ -1,22 +1,14 @@
 public class PalindromeCheckerApp {
 
-    static boolean isPalindrome(String str,int start,int end){
+    public static void main(String[] args) {
 
-        if(start>=end)
-            return true;
+        String word="Never Odd Or Even";
 
-        if(str.charAt(start)!=str.charAt(end))
-            return false;
+        String clean=word.replaceAll("\\s+","").toLowerCase();
 
-        return isPalindrome(str,start+1,end-1);
-    }
+        String reversed=new StringBuilder(clean).reverse().toString();
 
-    public static void main(String[] args){
-
-        String word="madam";
-
-        System.out.println(isPalindrome(word,0,word.length()-1)
-                ?"Palindrome":"Not Palindrome");
+        System.out.println(clean.equals(reversed)?"Palindrome":"Not Palindrome");
 
     }
 }
